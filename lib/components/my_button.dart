@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_login_signup/screens/signup.dart';
 
 class MyButton extends StatelessWidget {
   const MyButton({super.key});
@@ -6,7 +7,7 @@ class MyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){},
+      onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => const Signup()));},
       child: Container(
         padding: const EdgeInsets.all(16),
         margin: const EdgeInsets.symmetric(horizontal: 25),
@@ -15,7 +16,7 @@ class MyButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
         ),
         child: const Center(
-          child: Text("Sign in", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 10),),
+          child: Text("Sign in", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 13),),
         ),
       ),
     );

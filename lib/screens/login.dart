@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_login_signup/components/my_button.dart';
 import 'package:flutter_login_signup/components/my_emailField.dart';
 import 'package:flutter_login_signup/components/my_passField.dart';
+import 'package:flutter_login_signup/screens/signup.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -24,23 +25,21 @@ class Login extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
-              SizedBox(height: 50),
-              Icon(Icons.lock, size: 50.0, color: Colors.black),
-              SizedBox(height: 20),
-              Text(
+              const SizedBox(height: 50),
+              const Icon(Icons.lock, size: 50.0, color: Colors.black),
+              const SizedBox(height: 20),
+              const Text(
                 "Welcome Md. Zobayer Hasan Nayem",
                 style: TextStyle(color: Colors.grey, fontSize: 16),
               ),
-              SizedBox(height: 25),
+              const SizedBox(height: 25),
               const MyEmailField(),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               const MypassField(),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
+                child: Row(mainAxisAlignment: MainAxisAlignment.end, children: [
                   Text(
                     "Forget Password",
                     style: TextStyle(
@@ -50,28 +49,56 @@ class Login extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               const MyButton(),
-              const SizedBox(height: 25,),
+              const SizedBox(
+                height: 25,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Or continue with ", style: TextStyle(color: Colors.grey[600]),),
+                  Text(
+                    "Or continue with ",
+                    style: TextStyle(color: Colors.grey[600]),
+                  ),
                 ],
               ),
-              const SizedBox(height: 25,),
+              const SizedBox(
+                height: 25,
+              ),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(Icons.facebook, size: 30.0, color: Colors.blue),
-                  SizedBox(width: 10.0,),
+                  SizedBox(
+                    width: 10.0,
+                  ),
                   Icon(Icons.facebook, size: 30.0, color: Colors.blue),
                 ],
               ),
-              const SizedBox(height: 35,),
+              const SizedBox(
+                height: 35,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("don't have any account?? ", style: TextStyle(fontSize: 14,color: Colors.grey[600]),),
-                  Text("Sign Up ", style: TextStyle(fontSize: 16,color: Colors.grey[600]),),
+                  Text(
+                    "don't have any account?? ",
+                    style: TextStyle(fontSize: 14, color: Colors.grey[600]),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Signup()));
+                    },
+                    child: const Text(
+                      "Sign Up ",
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
                 ],
               ),
             ],
