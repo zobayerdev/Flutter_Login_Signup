@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class MypassField extends StatelessWidget {
-  const MypassField({super.key});
+class MyForgotPass extends StatelessWidget {
+  const MyForgotPass({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -9,7 +9,7 @@ class MypassField extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 25.0),
       child: TextFormField(
         decoration: const InputDecoration(
-          hintText: "Enter your password",
+          hintText: "Enter new password",
           prefixIcon:  Icon(
             Icons.password,
             color: Colors.grey,

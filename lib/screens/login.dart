@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_login_signup/components/my_button.dart';
 import 'package:flutter_login_signup/components/my_emailField.dart';
 import 'package:flutter_login_signup/components/my_passField.dart';
+import 'package:flutter_login_signup/screens/forgetpass.dart';
 import 'package:flutter_login_signup/screens/signup.dart';
 
 class Login extends StatelessWidget {
@@ -39,13 +40,17 @@ class Login extends StatelessWidget {
               const SizedBox(height: 10),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child: Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-                  Text(
-                    "Forget Password",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold, color: Colors.grey[600]),
-                  )
-                ]),
+                child: GestureDetector(
+                  onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => const ForgetPass()));},
+                  child: Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+                    Text(
+                      "Forget Password",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.grey[600]),
+                    )
+                  ]
+                  ),
+                ),
               ),
               const SizedBox(height: 10),
               const MyButton(),
